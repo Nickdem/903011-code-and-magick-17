@@ -25,10 +25,6 @@ var getMaxElement = function (arr) {
   return maxElement;
 };
 
-var getRandomNumber = function (min, max) {
-  return Math.random() * (max - min) + min;
-};
-
 window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
