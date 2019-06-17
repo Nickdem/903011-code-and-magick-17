@@ -41,10 +41,6 @@ var EYES_COLORS = [
 
 var NUMBER_OF_WIZARDS = 4;
 
-var similarListElement = document.querySelector('.setup-similar-list');
-var similarWizardTemplate = document.querySelector('#similar-wizard-template')
-  .content.querySelector('.setup-similar-item');
-
 var getRandomElement = function (array) {
   var random = Math.floor(Math.random() * array.length);
 
@@ -75,6 +71,10 @@ var getWizardsArray = function (numberOfWizards) {
 
   return wizards;
 };
+
+var similarListElement = document.querySelector('.setup-similar-list');
+var similarWizardTemplate = document.querySelector('#similar-wizard-template')
+  .content.querySelector('.setup-similar-item');
 
 var renderWizard = function (wizardData) {
   var similarWizard = similarWizardTemplate.cloneNode(true);
