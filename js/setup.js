@@ -39,6 +39,14 @@ var EYES_COLORS = [
   'green'
 ];
 
+var FIREBALL_COLORS = [
+  '#ee4830',
+  '#30a8ee',
+  '#5ce6c0',
+  '#e848d5',
+  '#e6e848'
+];
+
 var NUMBER_OF_WIZARDS = 4;
 
 var getRandomElement = function (array) {
@@ -95,6 +103,79 @@ var addWizards = function (wizardsArray) {
 
   return fragment;
 };
+
+var setupPopup = document.querySelector('.setup');
+var setupPopupOpen = document.querySelector('.setup-open');
+var setupPopupClose = setupPopup.querySelector('.setup-close');
+var wizardCoat = setupPopup.querySelector('.wizard-coat');
+var wizardCoatInput = setupPopup.querySelector('input[name="coat-color"]');
+var wizardEyes = setupPopup.querySelector('.wizard-eyes');
+var wizardEyesInput = setupPopup.querySelector('input[name="eyes-color"]');
+var fireball = setupPopup.querySelector('.setup-fireball');
+var fireballInput = setupPopup.querySelector('input[name="fireball-color"]');
+
+var keyCode = {
+  ESC: 27,
+  Enter: 13
+};
+
+var onPopupEscPress = function (evt) {
+  if (evt.keyCode === keyCode.ESC) {
+    closePopup();
+  }
+};
+
+var openPopup = function () {
+  setupPopup.classList.remove('hidden');
+  document.addEventListener('keydown', onPopupEscPress);
+};
+
+var closePopup = function () {
+  setupPopup.classList.add('hidden');
+  document.removeEventListener('keydown', onPopupEscPress);
+};
+
+var onCoatClick = function () {
+  var color = getRandomElement(COAT_COLORS);
+  wizardCoat.style.fill = color;
+  wizardCoatInput.value = color;
+};
+
+var onEyesClick = function () {
+  var color = getRandomElement(EYES_COLORS);
+  wizardEyes.style.fill = color;
+  wizardEyesInput.value = color;
+};
+
+var onFireballClick = function () {
+  var color = getRandomElement(FIREBALL_COLORS);
+  fireball.style.backgroundColor = color;
+  fireballInput.value = color;
+};
+
+setupPopupOpen.addEventListener('click', function () {
+  openPopup();
+});
+
+setupPopupOpen.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === keyCode.Enter) {
+    openPopup();
+  }
+});
+
+setupPopupClose.addEventListener('click', function () {
+  closePopup();
+});
+
+setupPopupClose.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === keyCode.Enter) {
+    closePopup();
+  }
+});
+
+wizardCoat.addEventListener('click', onCoatClick);
+wizardEyes.addEventListener('click', onEyesClick);
+fireball.addEventListener('click', onFireballClick);
 
 similarListElement.appendChild(addWizards(getWizardsArray(NUMBER_OF_WIZARDS)));
 
