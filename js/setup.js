@@ -153,18 +153,10 @@ var onFireballClick = function () {
   fireballInput.value = color;
 };
 
-setupPopupOpen.addEventListener('click', function () {
-  openPopup();
-});
-
 setupPopupOpen.addEventListener('keydown', function (evt) {
   if (evt.keyCode === keyCode.Enter) {
     openPopup();
   }
-});
-
-setupPopupClose.addEventListener('click', function () {
-  closePopup();
 });
 
 setupPopupClose.addEventListener('keydown', function (evt) {
@@ -173,11 +165,12 @@ setupPopupClose.addEventListener('keydown', function (evt) {
   }
 });
 
+setupPopupOpen.addEventListener('click', openPopup);
+setupPopupClose.addEventListener('click', closePopup);
 wizardCoat.addEventListener('click', onCoatClick);
 wizardEyes.addEventListener('click', onEyesClick);
 fireball.addEventListener('click', onFireballClick);
 
 similarListElement.appendChild(addWizards(getWizardsArray(NUMBER_OF_WIZARDS)));
 
-document.querySelector('.setup').classList.remove('hidden');
 document.querySelector('.setup-similar').classList.remove('hidden');
