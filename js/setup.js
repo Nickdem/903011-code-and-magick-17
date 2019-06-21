@@ -118,6 +118,8 @@ var keyCode = {
   ESC: 27,
   Enter: 13
 };
+var SETUP_START_X = '50%';
+var SETUP_START_Y = '80px';
 
 var onPopupEscPress = function (evt) {
   if (evt.keyCode === keyCode.ESC) {
@@ -128,6 +130,8 @@ var onPopupEscPress = function (evt) {
 var openPopup = function () {
   setupPopup.classList.remove('hidden');
   document.addEventListener('keydown', onPopupEscPress);
+  setupPopup.style.left = SETUP_START_X;
+  setupPopup.style.top = SETUP_START_Y;
 };
 
 var closePopup = function () {
