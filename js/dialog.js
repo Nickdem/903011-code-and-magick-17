@@ -53,7 +53,7 @@ var shopElement = document.querySelector('.setup-artifacts-shop');
 var draggedItem = null;
 
 shopElement.addEventListener('dragstart', function (evt) {
-  if (evt.target.tagName.toLowerCase() === 'img') {
+  if (evt.target.tagName === 'IMG') {
     draggedItem = evt.target.cloneNode(true); // .cloneNode(true) чтоб можно было брать много предметов
     evt.dataTransfer.setData('text/plain', evt.target.alt);
   }
