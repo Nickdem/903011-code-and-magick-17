@@ -1,5 +1,6 @@
 'use strict';
 
+(function () {
 var setupPopup = document.querySelector('.setup');
 var setupPopupHandler = setupPopup.querySelector('.upload');
 
@@ -82,3 +83,4 @@ artifactsElement.addEventListener('dragleave', function (evt) {
   evt.target.style.backgroundColor = '';
   evt.preventDefault();
 });
+})();
