@@ -10,10 +10,11 @@
   var fireball = setupPopup.querySelector('.setup-fireball');
   var fireballInput = setupPopup.querySelector('input[name="fireball-color"]');
 
-  window.keyCode = {
+  var keyCode = {
     ESC: 27,
     Enter: 13
   };
+  window.keyCode = keyCode;
 
   var SETUP_START_X = '50%';
   var SETUP_START_Y = '80px';
@@ -24,17 +25,21 @@
     }
   };
 
-  window.openPopup = function () {
+  var openPopup = function () {
     setupPopup.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
     setupPopup.style.left = SETUP_START_X;
     setupPopup.style.top = SETUP_START_Y;
   };
 
-  window.closePopup = function () {
+  window.openPopup = openPopup;
+
+  var closePopup = function () {
     setupPopup.classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
   };
+
+  window.closePopup = closePopup;
 
   var onCoatClick = function () {
     var color = window.getRandomElement(window.wizRen.coat);
