@@ -48,6 +48,12 @@ var FIREBALL_COLORS = [
   '#e6e848'
 ];
 
+window.wizRen = {
+  coat: COAT_COLORS,
+  eyes: EYES_COLORS,
+  fireball: FIREBALL_COLORS
+};
+
 var NUMBER_OF_WIZARDS = 4;
 
 var getRandomElement = function (array) {
@@ -55,6 +61,8 @@ var getRandomElement = function (array) {
 
   return array[random];
 };
+
+window.getRandomElement = getRandomElement;
 
 var getRandomName = function (namesArray, lastNamesArray) {
   var firstName = getRandomElement(namesArray);

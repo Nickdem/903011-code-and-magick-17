@@ -1,8 +1,7 @@
 'use strict';
 
 (function () {
-var setupPopup = document.querySelector('.setup');
-var setupPopupHandler = setupPopup.querySelector('.upload');
+var setupPopupHandler = window.setupPopup.querySelector('.upload');
 
 setupPopupHandler.addEventListener('mousedown', function (evt) {
   evt.preventDefault();
