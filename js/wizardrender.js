@@ -48,10 +48,10 @@
     '#e6e848'
   ];
 
-  window.wizRen = {
-    coat: COAT_COLORS,
-    eyes: EYES_COLORS,
-    fireball: FIREBALL_COLORS
+  window.WizardRender = {
+    COAT: COAT_COLORS,
+    EYES: EYES_COLORS,
+    FIREBALL: FIREBALL_COLORS
   };
 
   var NUMBER_OF_WIZARDS = 4;

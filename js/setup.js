@@ -42,19 +42,19 @@
   window.closePopup = closePopup;
 
   var onCoatClick = function () {
-    var color = window.getRandomElement(window.wizRen.coat);
+    var color = window.getRandomElement(window.WizardRender.COAT);
     wizardCoat.style.fill = color;
     wizardCoatInput.value = color;
   };
 
   var onEyesClick = function () {
-    var color = window.getRandomElement(window.wizRen.eyes);
+    var color = window.getRandomElement(window.WizardRender.EYES);
     wizardEyes.style.fill = color;
     wizardEyesInput.value = color;
   };
 
   var onFireballClick = function () {
-    var color = window.getRandomElement(window.wizRen.fireball);
+    var color = window.getRandomElement(window.WizardRender.FIREBALL);
     fireball.style.backgroundColor = color;
     fireballInput.value = color;
   };

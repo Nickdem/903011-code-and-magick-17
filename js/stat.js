@@ -34,15 +34,11 @@
   window.renderStatistics = function (ctx, names, times) {
     renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
     renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
-
     ctx.fillStyle = '#000';
     ctx.font = '16px PT Mono';
     ctx.fillText('Ура вы победили!', 125, 40);
     ctx.fillText('Список результатов:', 125, 55);
-
     var maxTime = getMaxElement(times);
-
-
     for (var i = 0; i < names.length; i++) {
       ctx.fillText(names[i], CLOUD_X + DISTANCE + (BAR_WIDTH + DISTANCE) * i, CLOUD_HEIGHT - GAP);
       ctx.fillStyle = (names[i] === 'Вы') ? 'rgba(255, 0, 0, 1)' : getRandomColor(100, 255);
